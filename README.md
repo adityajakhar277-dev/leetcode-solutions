@@ -7,9 +7,9 @@ My solutions to LeetCode problems, organized by difficulty.
 | Difficulty | Solved |
 |------------|--------|
 | Easy | 0 |
-| Medium | 0 |
+| Medium | 1 |
 | Hard | 0 |
-| **Total** | **0** |
+| **Total** | **1** |
 
 ## 🧠 Topics
 
