@@ -40,3 +40,14 @@ Build strong Data Structures & Algorithms fundamentals through consistent LeetCo
 ---
 
 ⭐ This repository is continuously updated as I solve more problems.
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [0031-next-permutation](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0031-next-permutation) |
+## Two Pointers
+|  |
+| ------- |
+| [0031-next-permutation](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0031-next-permutation) |
+<!---LeetCode Topics End-->
