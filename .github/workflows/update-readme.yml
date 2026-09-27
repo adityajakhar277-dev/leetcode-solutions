@@ -1,0 +1,78 @@
+name: Update README Stats
+
+on:
+  push:
+    paths:
+      - "stats.json"
+      - ".github/workflows/update-readme.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update README statistics
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          stats = json.loads(Path("stats.json").read_text())
+          leetcode = stats["leetcode"]
+
+          easy = leetcode["easy"]
+          medium = leetcode["medium"]
+          hard = leetcode["hard"]
+          total = leetcode["solved"]
+
+          readme = Path("README.md")
+          text = readme.read_text()
+
+          text = re.sub(
+              r'(\|\s*Easy\s*\|\s*)\d+(\s*\|)',
+              rf'\g<1>{easy}\g<2>',
+              text
+          )
+
+          text = re.sub(
+              r'(\|\s*Medium\s*\|\s*)\d+(\s*\|)',
+              rf'\g<1>{medium}\g<2>',
+              text
+          )
+
+          text = re.sub(
+              r'(\|\s*Hard\s*\|\s*)\d+(\s*\|)',
+              rf'\g<1>{hard}\g<2>',
+              text
+          )
+
+          text = re.sub(
+              r'(\|\s*\*\*Total\*\*\s*\|\s*)\*\*\d+\*\*(\s*\|)',
+              rf'\g<1>**{total}**\g<2>',
+              text
+          )
+
+          readme.write_text(text)
+          PY
+
+      - name: Commit README changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No README changes needed."
+          else
+            git commit -m "docs: update LeetCode progress"
+            git push
+          fi
