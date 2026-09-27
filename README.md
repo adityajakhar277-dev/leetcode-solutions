@@ -45,9 +45,14 @@ Build strong Data Structures & Algorithms fundamentals through consistent LeetCo
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0001-two-sum) |
 | [0031-next-permutation](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0031-next-permutation) |
 ## Two Pointers
 |  |
 | ------- |
 | [0031-next-permutation](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0031-next-permutation) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/adityajakhar277-dev/leetcode-solutions/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->
